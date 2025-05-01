@@ -1,11 +1,14 @@
 from fastapi import FastAPI
-
+import os
 from routers import transactions, categories, monthly_budgets
 import schemas
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI(
     servers=[
-        {"url": "https://be49-75-8-100-149.ngrok-free.app", "description": "Production Server"},
+        {"url": os.environ.get("BASE_URL"), "description": "Production Server"},
     ]
 )
 
