@@ -8,7 +8,7 @@ load_dotenv()
 
 app = FastAPI(
     servers=[
-        {"url": os.environ.get("BASE_URL"), "description": "Production Server"},
+        {"url": os.getenv("BASE_URL"), "description": "Production Server"},
     ]
 )
 
